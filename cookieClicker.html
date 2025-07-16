@@ -16,8 +16,26 @@
       flex-direction: column;
     "
   >
-    <button style="font-size: 20px">Click Me</button>
+    <button id="clicker" style="font-size: 20px">Click Me</button>
+    <h1 id="count">0</h1>
   </body>
-
-  <script></script>
+  <script>
+    const count = document.getElementById("count");
+    let clickCount = 0;
+    const clicker = document.getElementById("clicker");
+    clicker.addEventListener("click", function () {
+      clickCount++;
+      if (clickCount == 10) {
+        count.textContent = "You're just getting started";
+      } else if (clickCount == 25) {
+        count.textContent = "Woah,†hat's a lot of clicks";
+      } else if (clickCount == 50) {
+        count.textContent = "You are still clicking?";
+      } else if (clickCount == 100) {
+        count.textContent = "You win! Take a break";
+      } else {
+        count.textContent = clickCount;
+      }
+    });
+  </script>
 </html>
